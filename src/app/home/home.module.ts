@@ -21,6 +21,9 @@ const routes = [
     CommonModule,
     SharedModule,
     RouterModule.forChild(routes)
+  ],
+  exports: [
+    MiniatureCardComponent
   ]
 })
 export class HomeModule {}

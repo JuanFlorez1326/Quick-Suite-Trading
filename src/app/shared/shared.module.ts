@@ -6,6 +6,8 @@ import { MaterialModule } from './material/material.module';
   declarations: [],
   imports: [
     CommonModule,
+  ],
+  exports: [
     MaterialModule
   ]
 })

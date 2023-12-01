@@ -10,8 +10,4 @@ import { MOVIES } from 'src/app/shared/shared-movies';
 export class MiniaturesListComponent {
 
   public movies: IMovies[] = MOVIES;
-
-  constructor() {
-    console.log(this.movies);
-  }
 }
