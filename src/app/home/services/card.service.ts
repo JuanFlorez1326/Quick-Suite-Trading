@@ -7,9 +7,10 @@ import { IMovies } from 'src/app/shared/interfaces/movies.interface';
 export class CardService {
 
   public moviesOnWatchlist: IMovies[] = [];
+  public storage: string = 'moviesOnWatchlist';
 
   constructor() {
-    const storedMovies = localStorage.getItem('moviesOnWatchlist');
+    const storedMovies = localStorage.getItem(this.storage);
     this.moviesOnWatchlist = storedMovies ? JSON.parse(storedMovies) : [];
   }
 
@@ -18,13 +19,13 @@ export class CardService {
 
     if (!movieExists) {
       this.moviesOnWatchlist.push(movie);
-      localStorage.setItem('moviesOnWatchlist', JSON.stringify(this.moviesOnWatchlist));
+      localStorage.setItem(this.storage, JSON.stringify(this.moviesOnWatchlist));
     }
   }
 
   public removeMovieToWatchlist( movie: IMovies ): void {
     this.moviesOnWatchlist = this.moviesOnWatchlist.filter(existingMovie => existingMovie.id !== movie.id);
-    localStorage.setItem('moviesOnWatchlist', JSON.stringify(this.moviesOnWatchlist));
+    localStorage.setItem(this.storage, JSON.stringify(this.moviesOnWatchlist));
   }
   
   public isMovieInWatchlist( movie: IMovies ): boolean {

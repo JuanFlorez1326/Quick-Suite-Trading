@@ -18,9 +18,9 @@
                 <p> {{ currentMovie.description }} </p>
             </div>
             <div class="card-extra-info-content">
-                <span>Genre: {{ currentMovie.genre }}</span>
-                <span>Duration: {{ currentMovie.duration }}</span>
-                <span>Rating: {{ currentMovie.rating }}</span>
+                <span> <strong>Genre:</strong> {{ currentMovie.genre }}</span>
+                <span> <strong>Duration:</strong> {{ currentMovie.duration }}</span>
+                <span> <strong>Rating:</strong> {{ currentMovie.rating | number: '1.1' }}</span>
             </div>
             <div class="card-btn">
                 <div>
