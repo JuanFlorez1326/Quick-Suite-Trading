@@ -1,3 +1,20 @@
+<div class="sort-menu-content">
+    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Open sort menu">
+        <mat-icon class="fa-solid fa-ellipsis-vertical"></mat-icon>
+    </button>
+    
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="orderByTitle()">
+            <mat-icon class="fa-solid fa-sort"></mat-icon>
+            <span>Sort by title</span>
+        </button>
+        <button mat-menu-item (click)="orderByDate()">
+            <mat-icon class="fa-solid fa-sort"></mat-icon>
+            <span>Sort by release date</span>
+        </button>
+    </mat-menu>
+</div>
+
 <app-miniature-card
     [movies]="movies"
 ></app-miniature-card>

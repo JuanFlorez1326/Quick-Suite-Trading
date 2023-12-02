@@ -10,7 +10,19 @@ export class MiniatureCardComponent {
 
   @Input() public movies: IMovies[] = [];
 
-  goToMovie( movie: IMovies ): void {
-    console.log(movie);
+  public moviesOnWatchlist: IMovies[] = [];
+
+  constructor() {
+    const storedMovies = localStorage.getItem('moviesOnWatchlist');
+    this.moviesOnWatchlist = storedMovies ? JSON.parse(storedMovies) : [];
+  }
+
+  public addMovieToWatchlist(movie: IMovies): void {
+    const movieExists = this.moviesOnWatchlist.some(existingMovie => existingMovie.id === movie.id);
+
+    if (!movieExists) {
+      this.moviesOnWatchlist.push(movie);
+      localStorage.setItem('moviesOnWatchlist', JSON.stringify(this.moviesOnWatchlist));
+    }
   }
 }

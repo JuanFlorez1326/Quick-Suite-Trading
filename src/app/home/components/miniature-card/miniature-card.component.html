@@ -1,17 +1,29 @@
-<div class="card-content-movie">
-    <div *ngFor="let movie of movies" class="card-movie">
-        <div class="card-content-image">
-            <img class="card-movie-image" src="{{ movie.img }}" alt="{{ movie.title }}">
+<div class="all-cards-content">
+    <div class="card" *ngFor="let movie of movies">
+        <div class="img-card">
+            <img class="image" src="{{ movie.img }}" [alt]="movie.title">
         </div>
-        <div>
-            <h3>{{ movie.title }}</h3>
-            <p>Release Date: {{ movie.releasedDate }}</p>
-        </div>
-        <div>
-            <button class="btn btn-primary" (click)="goToMovie(movie)">View details</button>
+        <div class="card-content">
+            <div class="card-title">
+                <h1> {{ movie.title }} </h1>
+                <h4> {{ movie.releasedDate }} </h4>
+            </div>
+            <div class="card-text">
+                <p> {{ movie.description }} </p>
+            </div>
             <div>
-                <span>{{ movie.rating }}</span>
-                <em class="fa-solid fa-star"></em>
+                <mat-card-actions class="card-btn">
+                    <div>
+                        <button mat-button color="warn" (click)="addMovieToWatchlist(movie)">
+                            Add to watchlist
+                        </button>
+                    </div>
+                    <div>
+                        <button mat-button color="warn" [routerLink]="['/detail', movie.id]">
+                            More Info...
+                        </button>
+                    </div>
+                </mat-card-actions>
             </div>
         </div>
     </div>
