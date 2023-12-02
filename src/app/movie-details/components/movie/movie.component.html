@@ -11,6 +11,23 @@
             <div class="card-text">
                 <p> {{ currentMovie.description }} </p>
             </div>
+            <div class="card-extra-info-content">
+                <span>Genre: {{ currentMovie.genre }}</span>
+                <span>Duration: {{ currentMovie.duration }}</span>
+                <span>Rating: {{ currentMovie.rating }}</span>
+            </div>
+            <div class="card-btn">
+                <div>
+                    <button mat-button color="warn">
+                        <a class="card-trailer" href="{{ currentMovie.trailerLink }}" target="_blank">Watch trailer</a>
+                    </button>
+                </div>
+                <div>
+                    <button mat-button color="warn">
+                        Add to watchlist
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
