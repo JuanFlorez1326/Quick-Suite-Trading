@@ -47,15 +47,29 @@
         grid-template-rows: 50px 150px 50px;
         padding:10px 15px;
 
-        .card-title {
+        .card-title-content {
+            display: flex;
+            justify-content: space-between;
+
             h1 {
                 color:$color-text;
                 font-weight: bold;
                 font-size: 1.2em;
             }
-            h4 {
-                color:$date-color;
-                font-size: 1em;
+
+            em {
+                font-size: 1.5em;
+                height: 15px;
+                animation: pulse 1s infinite alternate;
+
+                @keyframes pulse {
+                    0% {
+                      transform: scale(1);
+                    }
+                    100% {
+                      transform: scale(1.3);
+                    }
+                }
             }
         }
 
