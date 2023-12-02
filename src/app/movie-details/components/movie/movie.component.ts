@@ -11,8 +11,8 @@ import { IMovies } from 'src/app/shared/interfaces/movies.interface';
 export class MovieComponent {
   
   public movies: IMovies[] = MOVIES;
-  public movieId!: number;
   public currentMovie!: IMovies;
+  public movieId!: number;
   
   constructor (
     private route: ActivatedRoute

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MiniaturesListComponent } from './components/miniatures-list/miniatures-list.component';
-import { MiniatureCardComponent } from './components/miniature-card/miniature-card.component';
-import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
+import { MiniatureCardComponent } from './components/miniature-card/miniature-card.component';
+import { MiniaturesListComponent } from './components/miniatures-list/miniatures-list.component';
 
 const routes = [
   {
@@ -14,8 +14,8 @@ const routes = [
 
 @NgModule({
   declarations: [
-    MiniaturesListComponent,
-    MiniatureCardComponent
+    MiniatureCardComponent,
+    MiniaturesListComponent
   ],
   imports: [
     CommonModule,
