@@ -5,7 +5,13 @@
         </div>
         <div class="card-content">
             <div class="card-title">
-                <h1> {{ movie.title }} </h1>
+                <div class="card-title-content">
+                    <h1> {{ movie.title }} </h1>
+                    <em 
+                        class="{{ isMovieInWatchlist(movie) ? 'fa-solid' : 'fa-regular' }} fa-bookmark"
+                        matTooltip="{{ isMovieInWatchlist(movie) ? 'The movie is on the watch list.' : 'The movie is not on the watch list.' }}"
+                    ></em>
+                </div>
                 <h4> {{ movie.releasedDate }} </h4>
             </div>
             <div class="card-text">
@@ -13,13 +19,18 @@
             </div>
             <div>
                 <mat-card-actions class="card-btn">
-                    <div>
-                        <button mat-button color="warn" (click)="addMovieToWatchlist(movie)">
-                            Add to watchlist
-                        </button>
+                    <div *ngIf="!isMovieInWatchlist(movie)">
+                        <button mat-button color="accent"
+                            (click)="addMovieToWatchlist(movie)"
+                        > Add to watchlist </button>
+                    </div>
+                    <div *ngIf="isMovieInWatchlist(movie)">
+                        <button mat-button color="warn"
+                            (click)="removeMovieToWatchlist(movie)"
+                        > Remove from watchlist </button>
                     </div>
                     <div>
-                        <button mat-button color="warn" [routerLink]="['/detail', movie.id]">
+                        <button mat-button color="primary" [routerLink]="['/detail', movie.id]">
                             More Info...
                         </button>
                     </div>

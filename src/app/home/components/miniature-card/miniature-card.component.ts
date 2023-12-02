@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CardService } from '../../services/card.service';
 import { IMovies } from 'src/app/shared/interfaces/movies.interface';
 
 @Component({
@@ -10,19 +11,19 @@ export class MiniatureCardComponent {
 
   @Input() public movies: IMovies[] = [];
 
-  public moviesOnWatchlist: IMovies[] = [];
+  constructor( 
+    private cardService: CardService 
+  ) {}
 
-  constructor() {
-    const storedMovies = localStorage.getItem('moviesOnWatchlist');
-    this.moviesOnWatchlist = storedMovies ? JSON.parse(storedMovies) : [];
+  public addMovieToWatchlist( movie: IMovies ): void {
+    this.cardService.addMovieToWatchlist(movie);
   }
 
-  public addMovieToWatchlist(movie: IMovies): void {
-    const movieExists = this.moviesOnWatchlist.some(existingMovie => existingMovie.id === movie.id);
-
-    if (!movieExists) {
-      this.moviesOnWatchlist.push(movie);
-      localStorage.setItem('moviesOnWatchlist', JSON.stringify(this.moviesOnWatchlist));
-    }
+  public removeMovieToWatchlist( movie: IMovies ): void {
+    this.cardService.removeMovieToWatchlist(movie);
+  }
+  
+  public isMovieInWatchlist(movie: IMovies): boolean {
+    return this.cardService.isMovieInWatchlist(movie);
   }
 }
