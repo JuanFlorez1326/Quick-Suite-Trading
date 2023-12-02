@@ -47,6 +47,11 @@
         grid-template-rows: 50px 150px 50px;
         padding:10px 15px;
 
+        h4 {
+            color:$date-color;
+            font-size: 1.2em;
+        }
+
         .card-title-content {
             display: flex;
             justify-content: space-between;
@@ -78,7 +83,7 @@
             p {
                 text-align:justify;
                 color:$color-text;
-                font-size: 1em;
+                font-size: 1.2em;
             }
         }
 
@@ -87,9 +92,14 @@
             flex-direction: column;
             margin-top:10%;
 
+            strong {
+                color:$date-color;
+                font-size: 1em;
+            }
+
             span {
                 color:$color-text;
-                font-size: 1em;
+                font-size: 1.2em;
             }
         }
 
