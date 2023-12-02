@@ -28,6 +28,5 @@ export class MovieComponent {
   public getMovie(id: number): void {
     const currentMovie = this.movies.find(movie => movie.id === id);
     this.currentMovie = currentMovie!;
-    console.log(this.currentMovie);
   }
 }

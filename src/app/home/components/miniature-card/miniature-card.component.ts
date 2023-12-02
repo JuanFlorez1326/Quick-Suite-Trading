@@ -25,4 +25,13 @@ export class MiniatureCardComponent {
       localStorage.setItem('moviesOnWatchlist', JSON.stringify(this.moviesOnWatchlist));
     }
   }
+
+  public removeMovieToWatchlist( movie: IMovies ) {
+    this.moviesOnWatchlist = this.moviesOnWatchlist.filter(existingMovie => existingMovie.id !== movie.id);
+    localStorage.setItem('moviesOnWatchlist', JSON.stringify(this.moviesOnWatchlist));
+  }
+  
+  public isMovieInWatchlist(movie: IMovies): boolean {
+    return this.moviesOnWatchlist.some(existingMovie => existingMovie.id === movie.id);
+  }
 }
