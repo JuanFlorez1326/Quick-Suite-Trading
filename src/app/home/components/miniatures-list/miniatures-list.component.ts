@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IMovies } from 'src/app/shared/interfaces/movies.interface';
 import { MOVIES } from 'src/app/shared/shared-movies';
+import { IMovies } from 'src/app/shared/interfaces/movies.interface';
 
 @Component({
   selector: 'app-miniatures-list',
@@ -8,6 +8,8 @@ import { MOVIES } from 'src/app/shared/shared-movies';
   styleUrls: ['./miniatures-list.component.scss']
 })
 export class MiniaturesListComponent {
+
+  constructor() {}
 
   public movies: IMovies[] = MOVIES;
 
