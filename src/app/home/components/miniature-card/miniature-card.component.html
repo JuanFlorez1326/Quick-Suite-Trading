@@ -11,12 +11,18 @@
             <div class="card-text">
                 <p> {{ movie.description }} </p>
             </div>
-            <div class="card-btn">
-                <mat-card-actions>
-                    <button 
-                        mat-button color="warn"
-                        [routerLink]="['/detail', movie.id]"
-                    >More Info...</button>
+            <div>
+                <mat-card-actions class="card-btn">
+                    <div>
+                        <button mat-button color="warn" (click)="addMovieToWatchlist(movie)">
+                            Add to watchlist
+                        </button>
+                    </div>
+                    <div>
+                        <button mat-button color="warn" [routerLink]="['/detail', movie.id]">
+                            More Info...
+                        </button>
+                    </div>
                 </mat-card-actions>
             </div>
         </div>

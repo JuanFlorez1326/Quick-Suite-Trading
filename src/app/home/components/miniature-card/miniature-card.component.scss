@@ -10,7 +10,6 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    background-color: $back-color;
 }
 
 .card{
@@ -72,7 +71,7 @@
         .card-btn {
             margin-top:15%;
             display:flex;
-            justify-content:flex-end;
+            justify-content: space-between;
             button {
                 padding:5px 10px;
                 border-radius: 5px;
@@ -93,12 +92,12 @@
 
         .img-card {
             width: 100%;
-            height: 40vh;
+            height: 60vh;
         }
 
         .card-content {
             width: 100%;
-            height: 50vh;
+            height: 40vh;
             padding:10px 10px;
 
             .card-title{
@@ -115,7 +114,8 @@
             }
 
             .card-btn {
-                margin-top: 30%;
+                margin-top: 20%;
+                display: flex;
             }    
         }
     }
@@ -131,7 +131,7 @@
 
         .img-card {
             width: 100%;
-            height: 40vh;
+            height: 80vh;
         }
         
         .card-content {

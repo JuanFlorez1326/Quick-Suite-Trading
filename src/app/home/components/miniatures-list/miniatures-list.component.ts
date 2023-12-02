@@ -10,4 +10,12 @@ import { MOVIES } from 'src/app/shared/shared-movies';
 export class MiniaturesListComponent {
 
   public movies: IMovies[] = MOVIES;
+
+  public orderByTitle(): void {
+    this.movies.sort((a, b) => a.title.localeCompare(b.title));
+  }
+
+  public orderByDate(): void {
+    this.movies.sort((a, b) => a.releasedDate.localeCompare(b.releasedDate));
+  }
 }

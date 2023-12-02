@@ -12,6 +12,7 @@ export class MovieComponent {
   
   public movies: IMovies[] = MOVIES;
   public movieId!: number;
+  public currentMovie!: IMovies;
   
   constructor (
     private route: ActivatedRoute
@@ -24,9 +25,9 @@ export class MovieComponent {
     });  
   }
 
-  public getMovie(id: number): IMovies | undefined {
+  public getMovie(id: number): void {
     const currentMovie = this.movies.find(movie => movie.id === id);
-    console.log(currentMovie);
-    return currentMovie;
+    this.currentMovie = currentMovie!;
+    console.log(this.currentMovie);
   }
 }
