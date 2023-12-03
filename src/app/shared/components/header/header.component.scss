@@ -3,6 +3,9 @@
 .header-content {
     padding: 0 1.5rem;
     margin-top: 25px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
 
     .header-title {
         font-size: 1.5rem;
