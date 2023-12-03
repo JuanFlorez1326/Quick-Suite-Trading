@@ -1,7 +1,16 @@
+@import '../../../../scss/variables';
+
 .sort-menu-content {
     display: flex;
     justify-content: flex-end;
     margin-right: 10px;
     position: relative;
-    bottom: 35px;
+    bottom: 41px;
+}
+
+.header-icon-watchlist {
+    position: relative;
+    top: 6px;
+    font-size: 1.5rem;
+    color: $color-text;
 }

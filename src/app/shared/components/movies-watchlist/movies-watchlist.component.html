@@ -1,0 +1,11 @@
+<div>
+  <h2 mat-dialog-title>Movies that are in the watchlist: {{ watchlist.length }}</h2>
+  <mat-dialog-content>
+    <div *ngFor="let movie of watchlist">
+      <ul> <li> {{ movie.title }} </li> </ul>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</div>
