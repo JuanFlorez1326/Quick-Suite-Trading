@@ -1,5 +1,5 @@
 <div class="sort-menu-content">
-    <button mat-button class="header-icon-watchlist" (click)="openDialogWatchList()">
+    <button mat-button class="header-icon-watchlist" (click)="openDialogWatchList()" matTooltip="View watchlist">
         <em class="fa-solid fa-bookmark"></em>
     </button>
     
@@ -8,13 +8,21 @@
     </button>
     
     <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="orderByTitle()">
-            <mat-icon class="fa-solid fa-sort"></mat-icon>
-            <span>Sort by title</span>
+        <button mat-menu-item (click)="orderByTitleDesc()">
+            <mat-icon class="fa-solid fa-arrow-down-a-z"></mat-icon>
+            <span>Sort by title desc</span>
         </button>
-        <button mat-menu-item (click)="orderByDate()">
-            <mat-icon class="fa-solid fa-sort"></mat-icon>
-            <span>Sort by release date</span>
+        <button mat-menu-item (click)="orderByTitleAsc()">
+            <mat-icon class="fa-solid fa-arrow-up-a-z"></mat-icon>
+            <span>Sort by title asc</span>
+        </button>
+        <button mat-menu-item (click)="orderByDateAsc()">
+            <mat-icon class="fa-solid fa-arrow-up-wide-short"></mat-icon>
+            <span>Sort by release date asc</span>
+        </button>
+        <button mat-menu-item (click)="orderByDateDesc()">
+            <mat-icon class="fa-solid fa-arrow-down-wide-short"></mat-icon>
+            <span>Sort by release date desc</span>
         </button>
     </mat-menu>
 </div>
