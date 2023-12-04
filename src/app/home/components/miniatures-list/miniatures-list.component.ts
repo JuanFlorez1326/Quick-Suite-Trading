@@ -17,12 +17,20 @@ export class MiniaturesListComponent {
 
   public movies: IMovies[] = MOVIES;
 
-  public orderByTitle(): void {
+  public orderByTitleDesc(): void {
     this.movies.sort((a, b) => a.title.localeCompare(b.title));
   }
 
-  public orderByDate(): void {
+  public orderByTitleAsc(): void {
+    this.movies.sort((a, b) => b.title.localeCompare(a.title));
+  }
+
+  public orderByDateAsc(): void {
     this.movies.sort((a, b) => a.releasedDate.localeCompare(b.releasedDate));
+  }
+
+  public orderByDateDesc(): void {
+    this.movies.sort((a, b) => b.releasedDate.localeCompare(a.releasedDate));
   }
 
   public openDialogWatchList(){
